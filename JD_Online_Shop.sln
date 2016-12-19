@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JD_Online_Shop", "JD_Online_Shop\JD_Online_Shop.csproj", "{EBB102E0-B2D8-45F1-8A04-D9CD474C4947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JD_Online_Shop_Bll", "JD_Online_Shop_Bll\JD_Online_Shop_Bll.csproj", "{4823071C-B058-475D-B2AC-3098FEC8E9EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JD_Online_Shop_Dal", "JD_Online_Shop_Dal\JD_Online_Shop_Dal.csproj", "{B7AC27B1-3A1A-4169-B60F-2609D8927D1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBB102E0-B2D8-45F1-8A04-D9CD474C4947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB102E0-B2D8-45F1-8A04-D9CD474C4947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB102E0-B2D8-45F1-8A04-D9CD474C4947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB102E0-B2D8-45F1-8A04-D9CD474C4947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4823071C-B058-475D-B2AC-3098FEC8E9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4823071C-B058-475D-B2AC-3098FEC8E9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4823071C-B058-475D-B2AC-3098FEC8E9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4823071C-B058-475D-B2AC-3098FEC8E9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AC27B1-3A1A-4169-B60F-2609D8927D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AC27B1-3A1A-4169-B60F-2609D8927D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AC27B1-3A1A-4169-B60F-2609D8927D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AC27B1-3A1A-4169-B60F-2609D8927D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
