@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInfoSeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoSeting.Designer.cs">
+      <DependentUpon>FormInfoSeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecharge.Designer.cs">
+      <DependentUpon>FormRecharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegister.Designer.cs">
+      <DependentUpon>FormRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
@@ -60,6 +84,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidCode.cs" />
+    <EmbeddedResource Include="FormInfoSeting.resx">
+      <DependentUpon>FormInfoSeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecharge.resx">
+      <DependentUpon>FormRecharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegister.resx">
+      <DependentUpon>FormRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +124,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JD_Online_Shop_Bll\JD_Online_Shop_Bll.csproj">
+      <Project>{4823071c-b058-475d-b2ac-3098fec8e9ec}</Project>
+      <Name>JD_Online_Shop_Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JD_Online_Shop_Dal\JD_Online_Shop_Dal.csproj">
+      <Project>{b7ac27b1-3a1a-4169-b60f-2609d8927d1f}</Project>
+      <Name>JD_Online_Shop_Dal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

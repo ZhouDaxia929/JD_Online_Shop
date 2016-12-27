@@ -13,7 +13,7 @@ namespace JD_Online_Shop {
         static void Main () {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormWelcome());
+            Application.Run(new FormMain());
         }
     }
 }
