@@ -13,7 +13,6 @@ namespace JD_Online_Shop_Dal.NetWork {
             Pass = false;
             hashSet = test.test1();
             hashSet.Remove("2879902");
-            //hashSet.Remove("2879902");
         }
         public void start () {
             int i = 0;
@@ -26,7 +25,7 @@ namespace JD_Online_Shop_Dal.NetWork {
                     Thread th = new Thread(new ThreadStart(npp.run));
                     th.Start();
 
-                    if (i++ == 39) {
+                    if (i++ == 35) {
                         break;
                     }
                 } 
@@ -36,8 +35,8 @@ namespace JD_Online_Shop_Dal.NetWork {
             //1677061
             parsePage npp = new parsePage("https://item.jd.com/1677061.html");
             npp.run();
-            parsePage npp1 = new parsePage("https://item.jd.com/3752769.html");
-            npp1.run();
+            //parsePage npp1 = new parsePage("https://item.jd.com/3752769.html");
+            //npp1.run();
         }
         /*
         public void start2 () {

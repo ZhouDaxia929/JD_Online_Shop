@@ -173,6 +173,22 @@ namespace JD_Online_Shop_Dal
                 return false;
             }
         }
+        public bool UpdateBalance(string email, string Balance, string goodId, string Price, int Num) {
+            DBHelper helper = new DBHelper("JD_Online_Shop");
+            string sSql = "update Customer set Balance = '" + Balance + "' where email = '" + email + "'";
+            string sSql2 = "insert into sale(goodId, Email, Price, Num) values (" + "'" + goodId + "', '"
+                + email + "', '" + Price + "'," + Num + ")";
+            string sSql3 = "update Good set goodNum = goodNum - " + Num + " where goodId = '" + goodId + "'";
+            long back = helper.Update(sSql);
+            long back2 = helper.Update(sSql2);
+            long back3 = helper.Update(sSql3);
+            if (back == 1 && back2 == 1 && back3 == 1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
         public Byte[] getPic(string Email) {
             Byte[] mybyte = new byte[0];
             DBHelper helper = new DBHelper("JD_Online_Shop");

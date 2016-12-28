@@ -136,5 +136,13 @@ namespace JD_Online_Shop_Bll
             }
             return result;
         }
+        public bool setBalance(string email, string Balance, string goodId, string Price, int Num) {
+            bool result = false;
+            Customer cm = new Customer("null", Customer.OperationType.Update);
+            if (cm.UpdateBalance(email, Balance, goodId, Price, Num)) {
+                result = true;
+            }
+            return result;
+        }
     }
 }

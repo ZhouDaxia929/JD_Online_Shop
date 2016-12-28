@@ -31,6 +31,7 @@ namespace JD_Online_Shop {
         private void FormRegister_Load (object sender, EventArgs e) {
             validCode = new ValidCode(5, ValidCode.CodeType.Characters);
             picVerify.Image = Bitmap.FromStream(validCode.CreateCheckCodeImage());
+            picVerify.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void btnOK_Click (object sender, EventArgs e) {

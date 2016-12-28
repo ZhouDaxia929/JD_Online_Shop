@@ -85,6 +85,7 @@ namespace JD_Online_Shop {
             txtAddress.Text = user.CUserAddress;
             MemoryStream ms = new MemoryStream(user.getUserPic(user.CUserEmail));
             picUser.Image = Image.FromStream(ms);
+            picUser.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void txtPwd1_KeyPress (object sender, KeyPressEventArgs e) {

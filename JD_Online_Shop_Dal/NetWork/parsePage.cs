@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.IO;
+//using System.Windows.Forms;
 
 namespace JD_Online_Shop_Dal.NetWork {
     class parsePage {
@@ -55,12 +56,15 @@ namespace JD_Online_Shop_Dal.NetWork {
             string goodUrl = url;
             string goodPicUrl = goodsPicUrl(htmlDoc);
             string goodDetils = goodsDetils(htmlDoc);
-            
+
+            /*
             WebClient myWebClient = new WebClient();
             Uri uri = new Uri(goodPicUrl);
             Byte[] mybyte = myWebClient.DownloadData(url);
-            //mybyte = new Byte[4] {1,2,3,4};
-            
+            */
+            //string result = this.SaveAsWebImg(goodPicUrl);
+            this.SaveAsWebImg(goodPicUrl,goodId);
+            Byte[] mybyte = this.SaveImgToDB(goodId);
             DBHelper helper = new DBHelper("JD_Online_Shop");
             helper.GoodsInitialize(goodId, goodName, 1000, goodPrice, goodUrl, goodPicUrl, mybyte, goodDetils);
         }
@@ -273,6 +277,43 @@ namespace JD_Online_Shop_Dal.NetWork {
                                 + "'" + poorCount + "')";
             DBHelper helper = new DBHelper("JD_Online_Shop");
             helper.Update(sSql);
+        }
+        private void SaveAsWebImg(string picUrl, string goodId) {
+            picUrl = "http:" + picUrl;
+            string result = "";
+            string fileName = "";
+            //string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"/File/";  //目录
+            string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"Goodpics\";  //目录
+            try {
+                if (!String.IsNullOrEmpty(picUrl)) {
+                    Random rd = new Random();
+                    DateTime nowTime = DateTime.Now;
+                    fileName = goodId + "_" + nowTime.Month.ToString() + nowTime.Day.ToString() + nowTime.Hour.ToString() + nowTime.Minute.ToString() + nowTime.Second.ToString() + rd.Next(1000, 1000000) + ".jpg";
+                    WebClient webClient = new WebClient();
+                    webClient.DownloadFile(picUrl, path + fileName);
+                    result = fileName;
+                }
+            }
+            catch { }
+        }
+        private Byte[] SaveImgToDB(string goodId) {
+            string goodID = "";
+            Byte[] mybyte = new Byte[1] { 1 };
+            string path = AppDomain.CurrentDomain.SetupInformation.ApplicationBase + @"Goodpics\";  //目录
+            //string Path = path + fileName;
+            DirectoryInfo dir = new DirectoryInfo(path);
+            foreach(FileInfo dC in dir.GetFiles("*")) {
+                string[] st = dC.Name.Split('_');
+                goodID = st[0];
+                if(goodID == goodId) {
+                    FileStream fs = new FileStream(dC.FullName, FileMode.Open, FileAccess.Read);
+                    mybyte = new byte[fs.Length];
+                    fs.Read(mybyte, 0, mybyte.Length);
+                    fs.Close();
+                    return mybyte;
+                }  
+            }
+            return mybyte;
         }
     }
 }
